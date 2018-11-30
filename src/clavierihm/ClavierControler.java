@@ -5,6 +5,7 @@
  */
 package clavierihm;
 
+import java.awt.event.KeyEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 
@@ -25,10 +26,15 @@ public class ClavierControler implements EventHandler {
     @Override
     public void handle(Event event) {
 
-        if (this.view.maj.isDisabled()) {
+        if (this.view.maj.isDisable() && ((Touche) event.getSource()).isMajOk()) {
             this.view.textArea.appendText(((Touche) event.getSource()).getText().toUpperCase());
             this.view.maj.setDisable(false);
         } else {
+
+            if (this.view.maj.isDisable()){
+                this.view.maj.setDisable(false);
+            }
+            
             if (event.getSource().equals(this.view.espace)) {
                 this.view.textArea.appendText(" ");
             } else if (event.getSource().equals(this.view.entrer)) {
@@ -36,14 +42,11 @@ public class ClavierControler implements EventHandler {
             } else if (event.getSource().equals(this.view.suppr)) {
                 this.view.textArea.deletePreviousChar();
             } else if (event.getSource().equals(this.view.maj)) {
-                if (this.view.maj.isDisable()) {
-                    this.view.maj.setDisable(false);
-                } else {
-                    this.view.maj.setDisable(true);
-                }
+                this.view.maj.setDisable(true);
             } else {
                 this.view.textArea.appendText(((Touche) event.getSource()).getText());
             }
+
         }
 
     }

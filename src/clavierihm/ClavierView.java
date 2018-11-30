@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  */
 public class ClavierView {
     
-    Touche suppr,espace,entrer,maj,a,z,e,r,t,y,u,i,o,p,q,s,d,f,g,h,j,k,l,m,w,x,c,v,b,n;  
+    Touche suppr,espace,entrer,maj,a,z,e,r,t,y,u,i,o,p,q,s,d,f,g,h,j,k,l,m,w,x,c,v,b,n,parentheses;  
     TextArea textArea; 
     ArrayList<Touche> touches = new ArrayList(); 
 
@@ -56,6 +56,7 @@ public class ClavierView {
 
         
         // LIGNE 1 AZERTY
+        touches.add(parentheses = new Touche("()",10,2,false));
         touches.add(a = new Touche("a", 0,2, true));
         touches.add(z = new Touche("z", 1,2, true));
         touches.add(e = new Touche("e",2,2, true));

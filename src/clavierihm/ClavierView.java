@@ -63,11 +63,11 @@ public class ClavierView {
         
         touches.add(suppr = new Touche("Delete",0,2,2,1, false)); 
         touches.add(entrer = new Touche("Entrée",0,3,2,1, false));
-        touches.add(maj = new Touche("Maj",0,6,true));
+        touches.add(maj = new Touche("Maj",10,4,4,1,true));
         touches.add(ctrl = new Touche("Ctrl",0,0,false)); 
         
         touches.add(esc = new Touche("Esc",0,1,false));
-        touches.add(guillemet = new Touche("\"\"\'\'",1,1,false));
+        touches.add(guillemet = new Touche("\"\"\'\'",1,1,true));
         touches.add(pourcentage = new Touche("%",2,1,false));
         touches.add(crochets = new Touche("[]",2,2,false));
         touches.add(accolades = new Touche("{}",3,2,false));

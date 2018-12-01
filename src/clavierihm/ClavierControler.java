@@ -25,33 +25,38 @@ public class ClavierControler implements EventHandler {
 
     @Override
     public void handle(Event event) {
-        
-        int caret = this.view.textArea.getCaretPosition(); 
+
+        int caret = this.view.textArea.getCaretPosition();
 
         if (this.view.maj.isDisable() && ((Touche) event.getSource()).isMajOk()) {
-            this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText().toUpperCase());
+            if (event.getSource().equals(this.view.guillemet)) {
+                this.view.textArea.insertText(caret, "\'\'");
+            } else {
+                this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText().toUpperCase());
+            }
             this.view.maj.setDisable(false);
         } else {
 
-            if (this.view.maj.isDisable()){
+            if (this.view.maj.isDisable()) {
                 this.view.maj.setDisable(false);
             }
-            
+
             if (event.getSource().equals(this.view.espace)) {
                 this.view.textArea.insertText(caret, " ");
             } else if (event.getSource().equals(this.view.entrer)) {
-                this.view.textArea.insertText(caret,"\n");
+                this.view.textArea.insertText(caret, "\n");
             } else if (event.getSource().equals(this.view.suppr)) {
                 this.view.textArea.deletePreviousChar();
             } else if (event.getSource().equals(this.view.maj)) {
                 this.view.maj.setDisable(true);
+            } else if (event.getSource().equals(this.view.guillemet)) {
+                this.view.textArea.insertText(caret, "\"\"");
+            } else if(event.getSource().equals(this.view.tab)){
+                this.view.textArea.insertText(caret, "  ");
             } else {
-                
-                this.view.textArea.insertText(caret,((Touche) event.getSource()).getText());
+                this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText());
             }
-
         }
-
     }
 
 }

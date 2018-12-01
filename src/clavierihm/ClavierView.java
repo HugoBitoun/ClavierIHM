@@ -48,6 +48,9 @@ public class ClavierView {
 
     }
 
+    /**
+     * Fonction qui initialise toute les touches 
+     */
     public void initTouches() {
 
         //LIGNE 0
@@ -129,12 +132,19 @@ public class ClavierView {
         }
     }
 
+    /**
+     * Cette fonction ajoute les touches qui sont dans la liste touches dans le gridPane
+     * @param gridPane
+     */
     public void insertTouches(GridPane gridPane) {
         for (Touche touche : touches) {
             gridPane.add(touche, touche.getCol(), touche.getRow(), touche.getColspan(), touche.getRowspan());
         }
     }
 
+    /**
+     * Fonction qui récupère les évenements 
+     */
     public void getEvent() {
         ClavierControler controler = new ClavierControler(this, new ClavierModel());
         for (Touche touche : this.touches) {

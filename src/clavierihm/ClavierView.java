@@ -33,13 +33,14 @@ public class ClavierView {
         BorderPane borderPane = new BorderPane();
         GridPane gridPane = new GridPane();
         textArea = new TextArea();
-
+        
         initTouches();
         getEvent();
         insertTouches(gridPane);
 
         borderPane.setCenter(textArea);
         borderPane.setBottom(gridPane);
+
 
         Scene scene = new Scene(borderPane, 600, 400);
 
@@ -115,8 +116,13 @@ public class ClavierView {
         touches.add(f = new Touche("v", 7, 4, true));
         touches.add(g = new Touche("b", 8, 4, true));
         touches.add(h = new Touche("n", 9, 4, true));
+
+        touches.add(maj = new Touche("Maj", 10, 4, 4, 1, true));
+        touches.add(flecheH = new Touche("↑", 14, 4, false));
+
         touches.add(maj = new Touche("Maj", 10, 4, 4, 1, false));
         touches.add(flecheH = new Touche("^", 14, 4, false));
+
                      
         //LIGNE 5
         touches.add(mult = new Touche("*", 0, 5, false));
@@ -124,9 +130,9 @@ public class ClavierView {
         touches.add(soustr = new Touche("-", 2, 5, false));
         touches.add(egal = new Touche("=", 3, 5, false));
         touches.add(espace = new Touche("Espace", 4, 5, 9, 1, false));
-        touches.add(flecheG = new Touche("<", 13, 5, false));
-        touches.add(flecheB = new Touche("", 14, 5, false));
-        touches.add(flecheD = new Touche(">", 15, 5, false));
+        touches.add(flecheG = new Touche("←", 13, 5, false));
+        touches.add(flecheB = new Touche("↓", 14, 5, false));
+        touches.add(flecheD = new Touche("→", 15, 5, false));
 
         for (Touche touche : touches) {
             touche.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
@@ -156,5 +162,4 @@ public class ClavierView {
             touche.addEventHandler(KeyEvent.KEY_PRESSED, controler);
         }
     }
-
 }

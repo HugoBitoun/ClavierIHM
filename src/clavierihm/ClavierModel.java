@@ -6,7 +6,7 @@
 package clavierihm;
 
 /**
- *
+ * Cette classe n'est pas utile pour le moment mais peut-etre plus tard 
  * @author hugo
  */
 public class ClavierModel {

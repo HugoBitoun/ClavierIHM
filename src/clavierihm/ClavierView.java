@@ -48,6 +48,9 @@ public class ClavierView {
 
     }
 
+    /**
+     * Fonction qui initialise toute les touches 
+     */
     public void initTouches() {
 
         //LIGNE 0
@@ -62,14 +65,15 @@ public class ClavierView {
         touches.add(pourcentage = new Touche("%", 2, 1, false));
         touches.add(pointExclam = new Touche("!", 3, 1, false));
         touches.add(un = new Touche("1", 4, 1, false));
-        touches.add(deux = new Touche("3", 5, 1, false));
-        touches.add(trois = new Touche("4", 6, 1, false));
-        touches.add(quatre = new Touche("5", 7, 1, false));
-        touches.add(cinq = new Touche("6", 8, 1, false));
-        touches.add(six = new Touche("7", 9, 1, false));
-        touches.add(sept = new Touche("8", 10, 1, false));
-        touches.add(huit = new Touche("9", 11, 1, false));
-        touches.add(zero = new Touche("0", 12, 1, false));
+        touches.add(deux = new Touche("2", 5, 1, false));
+        touches.add(trois = new Touche("3", 6, 1, false));
+        touches.add(quatre = new Touche("4", 7, 1, false));
+        touches.add(cinq = new Touche("5", 8, 1, false));
+        touches.add(six = new Touche("6", 9, 1, false));
+        touches.add(sept = new Touche("7", 10, 1, false));
+        touches.add(huit = new Touche("8", 11, 1, false));
+        touches.add(neuf = new Touche("9", 12, 1, false));
+        touches.add(zero = new Touche("0", 13, 1, false));
             
         //LIGNE 2
         touches.add(suppr = new Touche("Delete", 0, 2, 2, 1, false));
@@ -111,8 +115,13 @@ public class ClavierView {
         touches.add(f = new Touche("v", 7, 4, true));
         touches.add(g = new Touche("b", 8, 4, true));
         touches.add(h = new Touche("n", 9, 4, true));
+
         touches.add(maj = new Touche("Maj", 10, 4, 4, 1, true));
         touches.add(flecheH = new Touche("↑", 14, 4, false));
+
+        touches.add(maj = new Touche("Maj", 10, 4, 4, 1, false));
+        touches.add(flecheH = new Touche("^", 14, 4, false));
+
                      
         //LIGNE 5
         touches.add(mult = new Touche("*", 0, 5, false));
@@ -129,12 +138,19 @@ public class ClavierView {
         }
     }
 
+    /**
+     * Cette fonction ajoute les touches qui sont dans la liste touches dans le gridPane
+     * @param gridPane
+     */
     public void insertTouches(GridPane gridPane) {
         for (Touche touche : touches) {
             gridPane.add(touche, touche.getCol(), touche.getRow(), touche.getColspan(), touche.getRowspan());
         }
     }
 
+    /**
+     * Fonction qui récupère les évenements 
+     */
     public void getEvent() {
         ClavierControler controler = new ClavierControler(this, new ClavierModel());
         for (Touche touche : this.touches) {

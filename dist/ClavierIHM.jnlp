@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ClavierIHM.jnlp">
   <information>
@@ -16,3 +17,23 @@
   <jfx:javafx-desc  width="800" height="600" main-class="clavierihm.ClavierIHM"  name="ClavierIHM" />
   <update check="always"/>
 </jnlp>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ClavierIHM.jnlp">
+  <information>
+    <title>ClavierIHM</title>
+    <vendor>hugo</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ClavierIHM.jar" size="6801" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ClavierIHM" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="clavierihm.ClavierIHM"  name="ClavierIHM" />
+  <update check="always"/>
+</jnlp>
+>>>>>>> origin/master

@@ -25,23 +25,20 @@ public class ClavierControler implements EventHandler {
 
     @Override
     public void handle(Event event) {
-
+        
+        
+        String colorMajPressed = "-fx-background-color: #676767;";
+        String colorMajDefault = ""; 
         int caret = this.view.textArea.getCaretPosition();
 
-        if (this.view.maj.isDisable() && ((Touche) event.getSource()).isMajOk()) {
+        if (this.view.maj.getStyle().equals(colorMajPressed) && ((Touche) event.getSource()).isMajOk()) {
             if (event.getSource().equals(this.view.guillemet)) {
                 this.view.textArea.insertText(caret, "\'\'");
             } else {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText().toUpperCase());
             }
-            this.view.maj.setDisable(false);
-            
         } else {
-
-            if (this.view.maj.isDisable()) {
-                this.view.maj.setDisable(false);
-            }
-
+            
             if (event.getSource().equals(this.view.espace)) {
                 this.view.textArea.insertText(caret, " ");
             } else if (event.getSource().equals(this.view.entrer)) {
@@ -49,8 +46,11 @@ public class ClavierControler implements EventHandler {
             } else if (event.getSource().equals(this.view.suppr)) {
                 this.view.textArea.deletePreviousChar();
             } else if (event.getSource().equals(this.view.maj)) {
-                //this.view.maj.setDisable(true);
-                this.view.maj.setStyle("fx-background-color: #676767");
+                if (this.view.maj.getStyle().equals(colorMajPressed)) {
+                    this.view.maj.setStyle(colorMajDefault);
+                } else {
+                    this.view.maj.setStyle(colorMajPressed);
+                }
             } else if (event.getSource().equals(this.view.guillemet)) {
                 this.view.textArea.insertText(caret, "\"\"");
             } else if(event.getSource().equals(this.view.tab)){

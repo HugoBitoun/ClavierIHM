@@ -116,9 +116,12 @@ public class ClavierView {
         touches.add(f = new Touche("v", 7, 4, true));
         touches.add(g = new Touche("b", 8, 4, true));
         touches.add(h = new Touche("n", 9, 4, true));
+
         touches.add(maj = new Touche("Maj", 10, 4, 4, 1, true));
         touches.add(flecheH = new Touche("↑", 14, 4, false));
+
         touches.add(maj = new Touche("Maj", 10, 4, 4, 1, false));
+        touches.add(flecheH = new Touche("^", 14, 4, false));
 
                      
         //LIGNE 5

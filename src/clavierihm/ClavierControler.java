@@ -51,12 +51,20 @@ public class ClavierControler implements EventHandler {
                 this.view.maj.setDisable(true);
             } else if (event.getSource().equals(this.view.guillemet)) {
                 this.view.textArea.insertText(caret, "\"\"");
-            } else if(event.getSource().equals(this.view.tab)){
-                this.view.textArea.insertText(caret, "  ");
-            } else {
+
+            } else if (event.getSource().equals(this.view.tab)) {
+                this.view.textArea.insertText(caret, "    ");
+            } else if (event.getSource().equals(this.view.flecheG)) {//l'event arrivé esr : de se déplacer à gauche
+                this.view.textArea.positionCaret(caret - 1);
+            } else if (event.getSource().equals(this.view.flecheD)) {//l'event arrivé esr : de se déplacer à droite
+                this.view.textArea.positionCaret(caret + 1);
+            } 
+            else {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText());
             }
         }
+        System.out.println(this.view.textArea.getCaretPosition());
+
     }
 
 }

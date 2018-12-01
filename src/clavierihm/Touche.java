@@ -53,7 +53,5 @@ public class Touche extends Button {
 
     public int getRowspan() {
         return rowspan;
-    }
-    
-    
+    } 
 }

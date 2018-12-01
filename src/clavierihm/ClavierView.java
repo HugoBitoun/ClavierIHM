@@ -21,7 +21,13 @@ import javafx.stage.Stage;
  */
 public class ClavierView {
     
-    Touche suppr,espace,entrer,maj,a,z,e,r,t,y,u,i,o,p,q,s,d,f,g,h,j,k,l,m,w,x,c,v,b,n,parentheses;  
+    Touche  trois,quatre,cinq,six,sept,huit,neuf,deux,un,
+            zero,slash, aSlash, chevrons, pointExclam,pointVirgule
+            , add,mult,soustr,egal,etLogique,pipe,tab,esc,accolades
+            ,crochets,pourcentage,guillemet,ctrl,suppr,espace,entrer
+            ,maj,a,z,e,r,t,y,u,i,o,flecheG,flecheD,flecheH,flecheB,
+            p,q,s,d,f,g,h,j,k,l,m,w,x,c,v,b,n,parentheses; 
+    
     TextArea textArea; 
     ArrayList<Touche> touches = new ArrayList(); 
 
@@ -49,46 +55,82 @@ public class ClavierView {
     }
     
     public void initTouches(){
-        touches.add(espace = new Touche("Espace",0,0,false));
-        touches.add(suppr = new Touche("Delete",2,0, false)); 
-        touches.add(entrer = new Touche("Entrée",1,0, false));
-        touches.add(maj = new Touche("Maj",3,0,true));
-
+        touches.add(espace = new Touche("Espace",4,5,9,1,false));
+        touches.add(flecheH = new Touche("^",14,4,false));
+        touches.add(flecheB = new Touche("",14,5,false));
+        touches.add(flecheD = new Touche(">",15,5,false));
+        touches.add(flecheG = new Touche("<",13,5,false));
         
-        // LIGNE 1 AZERTY
-        touches.add(parentheses = new Touche("()",10,2,false));
-        touches.add(a = new Touche("a", 0,2, true));
-        touches.add(z = new Touche("z", 1,2, true));
-        touches.add(e = new Touche("e",2,2, true));
-        touches.add(r = new Touche("r",3,2, true));
-        touches.add(t = new Touche("t",4,2, true));
-        touches.add(y = new Touche("y",5,2, true));
-        touches.add(u = new Touche("u",6,2, true));
-        touches.add(i = new Touche("i",7,2, true));
-        touches.add(o = new Touche("o",8,2, true));
-        touches.add(p = new Touche("p",9,2, true));
+        touches.add(suppr = new Touche("Delete",0,2,2,1, false)); 
+        touches.add(entrer = new Touche("Entrée",0,3,2,1, false));
+        touches.add(maj = new Touche("Maj",0,6,true));
+        touches.add(ctrl = new Touche("Ctrl",0,0,false)); 
+        
+        touches.add(esc = new Touche("Esc",0,1,false));
+        touches.add(guillemet = new Touche("\"\"\'\'",1,1,false));
+        touches.add(pourcentage = new Touche("%",2,1,false));
+        touches.add(crochets = new Touche("[]",2,2,false));
+        touches.add(accolades = new Touche("{}",3,2,false));
+        touches.add(esc = new Touche("Esc",0,1,false));
+        touches.add(pointVirgule = new Touche(";",2,3,false));
+        touches.add(parentheses = new Touche("()",3,3,false));
+        touches.add(pointExclam = new Touche("!",3,1,false));
+        touches.add(tab = new Touche("Tab",0,4,2,1,false));
+        touches.add(etLogique = new Touche("&",2,4,false));
+        touches.add(pipe = new Touche("|",3,4,false));
+        touches.add(mult = new Touche("*",0,5,false));
+        touches.add(add = new Touche("+",1,5,false));
+        touches.add(soustr = new Touche("-",2,5,false));
+        touches.add(egal = new Touche("=",3,5,false));
+        touches.add(slash = new Touche("/",2,0,false));
+        touches.add(aSlash = new Touche("\\",3,0,false));
+        touches.add(chevrons = new Touche("<>",1,0,false));
+        
+        touches.add(zero = new Touche("0",12,1,false));
+        touches.add(un = new Touche("1",4,1,false));
+        touches.add(deux = new Touche("3",5,1,false));
+        touches.add(trois = new Touche("4",6,1,false));
+        touches.add(quatre = new Touche("5",7,1,false));
+        touches.add(cinq = new Touche("6",8,1,false));
+        touches.add(six = new Touche("7",9,1,false));
+        touches.add(sept = new Touche("8",10,1,false));
+        touches.add(huit = new Touche("9",11,1,false));
+        // LIGNE 1 AZERT
+        
+        touches.add(a = new Touche("a", 4,2, true));
+        touches.add(z = new Touche("z", 5,2, true));
+        touches.add(e = new Touche("e",6,2, true));
+        touches.add(r = new Touche("r",7,2, true));
+        touches.add(t = new Touche("t",8,2, true));
+        touches.add(y = new Touche("y",9,2, true));
+        touches.add(u = new Touche("u",10,2, true));
+        touches.add(i = new Touche("i",11,2, true));
+        touches.add(o = new Touche("o",12,2, true));
+        touches.add(p = new Touche("p",13,2, true));
         
         // LIGNE 2 AZERTY
-        touches.add(q = new Touche("q", 0,3, true));
-        touches.add(s = new Touche("s", 1,3, true));
-        touches.add(d = new Touche("d",2,3, true));
-        touches.add(f = new Touche("f",3,3, true));
-        touches.add(g = new Touche("g",4,3, true));
-        touches.add(h = new Touche("h",5,3, true));
-        touches.add(j = new Touche("j",6,3, true));
-        touches.add(k = new Touche("k",7,3, true));
-        touches.add(l = new Touche("l",8,3, true));
-        touches.add(m = new Touche("m",9,3, true));
+        touches.add(q = new Touche("q", 4,3, true));
+        touches.add(s = new Touche("s", 5,3, true));
+        touches.add(d = new Touche("d",6,3, true));
+        touches.add(f = new Touche("f",7,3, true));
+        touches.add(g = new Touche("g",8,3, true));
+        touches.add(h = new Touche("h",9,3, true));
+        touches.add(j = new Touche("j",10,3, true));
+        touches.add(k = new Touche("k",11,3, true));
+        touches.add(l = new Touche("l",12,3, true));
+        touches.add(m = new Touche("m",13,3, true));
         
         // LIGNE 3 AZERTY
-        touches.add(q = new Touche("w", 0,4, true));
-        touches.add(s = new Touche("x", 1,4, true));
-        touches.add(d = new Touche("c",2,4, true));
-        touches.add(f = new Touche("v",3,4, true));
-        touches.add(g = new Touche("b",4,4, true));
-        touches.add(h = new Touche("n",5,4, true));
+        touches.add(q = new Touche("w", 4,4, true));
+        touches.add(s = new Touche("x", 5,4, true));
+        touches.add(d = new Touche("c",6,4, true));
+        touches.add(f = new Touche("v",7,4, true));
+        touches.add(g = new Touche("b",8,4, true));
+        touches.add(h = new Touche("n",9,4, true));
         
-        
+        for (Touche touche : touches){
+            touche.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+        }
         
     }
     

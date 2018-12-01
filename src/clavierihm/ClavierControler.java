@@ -35,6 +35,7 @@ public class ClavierControler implements EventHandler {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText().toUpperCase());
             }
             this.view.maj.setDisable(false);
+            
         } else {
 
             if (this.view.maj.isDisable()) {
@@ -48,7 +49,8 @@ public class ClavierControler implements EventHandler {
             } else if (event.getSource().equals(this.view.suppr)) {
                 this.view.textArea.deletePreviousChar();
             } else if (event.getSource().equals(this.view.maj)) {
-                this.view.maj.setDisable(true);
+                //this.view.maj.setDisable(true);
+                this.view.maj.setStyle("fx-background-color: #676767");
             } else if (event.getSource().equals(this.view.guillemet)) {
                 this.view.textArea.insertText(caret, "\"\"");
             } else if(event.getSource().equals(this.view.tab)){

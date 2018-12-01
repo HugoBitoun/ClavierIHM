@@ -63,8 +63,6 @@ public class ClavierControler implements EventHandler {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText());
             }
         }
-        System.out.println(this.view.textArea.getCaretPosition());
-
     }
 
 }

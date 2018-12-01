@@ -41,7 +41,7 @@ public class ClavierView {
         borderPane.setCenter(textArea);
         borderPane.setBottom(gridPane);
 
-        Scene scene = new Scene(borderPane, 400, 200);
+        Scene scene = new Scene(borderPane, 600, 400);
 
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -55,7 +55,7 @@ public class ClavierView {
 
         //LIGNE 0
         touches.add(ctrl = new Touche("Ctrl", 0, 0, false));
-        touches.add(chevrons = new Touche("<>", 1, 0, false));
+        touches.add(chevrons = new Touche("<>", 1, 0, true));
         touches.add(slash = new Touche("/", 2, 0, false));
         touches.add(aSlash = new Touche("\\", 3, 0, false));   
                 

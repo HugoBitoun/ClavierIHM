@@ -34,11 +34,12 @@ public class ClavierControler implements EventHandler {
         if (this.view.maj.getStyle().equals(colorMajPressed) && ((Touche) event.getSource()).isMajOk()) {
             if (event.getSource().equals(this.view.guillemet)) {
                 this.view.textArea.insertText(caret, "\'\'");
+            } else if (event.getSource().equals(this.view.chevrons)){
+                this.view.textArea.insertText(caret, ">");
             } else {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText().toUpperCase());
             }
         } else {
-            
             if (event.getSource().equals(this.view.espace)) {
                 this.view.textArea.insertText(caret, " ");
             } else if (event.getSource().equals(this.view.entrer)) {
@@ -55,7 +56,11 @@ public class ClavierControler implements EventHandler {
                 this.view.textArea.insertText(caret, "\"\"");
             } else if(event.getSource().equals(this.view.tab)){
                 this.view.textArea.insertText(caret, "  ");
-            } else {
+            } else if (event.getSource().equals(this.view.esc)){
+                // useless
+            } else if (event.getSource().equals(this.view.chevrons)){
+                this.view.textArea.insertText(caret, "<");
+            }else {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText());
             }
         }

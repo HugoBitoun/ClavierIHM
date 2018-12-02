@@ -43,7 +43,7 @@ public class ClavierView {
 
 
         Scene scene = new Scene(borderPane, 600, 400);
-
+        primaryStage.setTitle("Clavier Viseul pour les dévelopeurs");
         primaryStage.setScene(scene);
         primaryStage.show();
 

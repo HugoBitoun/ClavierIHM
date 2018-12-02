@@ -63,7 +63,7 @@ public class ClavierView {
                 
         //LIGNE 1
         touches.add(esc = new Touche("Esc", 0, 1, false));
-        touches.add(guillemet = new Touche("\"\"\'\'", 1, 1, true));
+        touches.add(guillemet = new Touche("\"\"", 1, 1, true));
         touches.add(pourcentage = new Touche("%", 2, 1, false));
         touches.add(pointExclam = new Touche("!", 3, 1, false));
         touches.add(un = new Touche("1", 4, 1, false));

@@ -8,6 +8,7 @@ package clavierihm;
 import java.awt.event.KeyEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.Cursor;
 
 /**
  *
@@ -17,6 +18,8 @@ public class ClavierControler implements EventHandler {
 
     private ClavierView view;
     private ClavierModel model;
+    //private int lastLine = 0;
+    //private int nextLine = 0;
 
     ClavierControler(ClavierView view, ClavierModel model) {
         this.view = view;
@@ -25,16 +28,16 @@ public class ClavierControler implements EventHandler {
 
     @Override
     public void handle(Event event) {
-        
-        
+
+        //System.out.println("caret debut = "+this.view.textArea.getCaretPosition());
         String colorMajPressed = "-fx-background-color: #676767;";
-        String colorMajDefault = ""; 
+        String colorMajDefault = "";
         int caret = this.view.textArea.getCaretPosition();
 
         if (this.view.maj.getStyle().equals(colorMajPressed) && ((Touche) event.getSource()).isMajOk()) {
             if (event.getSource().equals(this.view.guillemet)) {
                 this.view.textArea.insertText(caret, "\'\'");
-            } else if (event.getSource().equals(this.view.chevrons)){
+            } else if (event.getSource().equals(this.view.chevrons)) {
                 this.view.textArea.insertText(caret, ">");
             } else {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText().toUpperCase());
@@ -44,6 +47,7 @@ public class ClavierControler implements EventHandler {
                 this.view.textArea.insertText(caret, " ");
             } else if (event.getSource().equals(this.view.entrer)) {
                 this.view.textArea.insertText(caret, "\n");
+                //lastLine = this.view.textArea.getCaretPosition()-1;
             } else if (event.getSource().equals(this.view.suppr)) {
                 this.view.textArea.deletePreviousChar();
             } else if (event.getSource().equals(this.view.maj)) {
@@ -54,9 +58,9 @@ public class ClavierControler implements EventHandler {
                 }
             } else if (event.getSource().equals(this.view.guillemet)) {
                 this.view.textArea.insertText(caret, "\"\"");
-            } else if (event.getSource().equals(this.view.esc)){
+            } else if (event.getSource().equals(this.view.esc)) {
                 // useless
-            } else if (event.getSource().equals(this.view.chevrons)){
+            } else if (event.getSource().equals(this.view.chevrons)) {
                 this.view.textArea.insertText(caret, "<");
             } else if (event.getSource().equals(this.view.tab)) {
                 this.view.textArea.insertText(caret, "    ");
@@ -64,10 +68,18 @@ public class ClavierControler implements EventHandler {
                 this.view.textArea.positionCaret(caret - 1);
             } else if (event.getSource().equals(this.view.flecheD)) {//l'event arrivé esr : de se déplacer à droite
                 this.view.textArea.positionCaret(caret + 1);
-            } 
-            else {
+            } else if (event.getSource().equals(this.view.flecheH)) {//l'event arrivé esr : de se déplacer en haut
+                //nextLine = this.view.textArea.getCaretPosition()+1;
+                //this.view.textArea.positionCaret(lastLine);
+            } else if (event.getSource().equals(this.view.flecheB)) {//l'event arrivé esr : de se déplacer en bas
+//                if(nextLine != 0){
+//                    lastLine = this.view.textArea.getCaretPosition();
+//                    this.view.textArea.positionCaret(nextLine);
+//                }
+            } else {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText());
             }
+            //System.out.println("caret Fin = "+this.view.textArea.getCaretPosition()+"\n");
         }
     }
 

@@ -33,7 +33,8 @@ public class ClavierView {
         BorderPane borderPane = new BorderPane();
         GridPane gridPane = new GridPane();
         textArea = new TextArea();
-        
+        textArea.setPrefColumnCount(0);
+        textArea.setPrefRowCount(0);
         initTouches();
         getEvent();
         insertTouches(gridPane);
@@ -119,10 +120,6 @@ public class ClavierView {
 
         touches.add(maj = new Touche("Maj", 10, 4, 4, 1, true));
         touches.add(flecheH = new Touche("↑", 14, 4, false));
-
-        touches.add(maj = new Touche("Maj", 10, 4, 4, 1, false));
-        touches.add(flecheH = new Touche("^", 14, 4, false));
-
                      
         //LIGNE 5
         touches.add(mult = new Touche("*", 0, 5, false));

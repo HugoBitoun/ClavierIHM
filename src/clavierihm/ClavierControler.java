@@ -38,7 +38,7 @@ public class ClavierControler implements EventHandler {
             if (event.getSource().equals(this.view.guillemet)) {
                 this.view.textArea.insertText(caret, "\'\'");
             } else if (event.getSource().equals(this.view.chevrons)) {
-                this.view.textArea.insertText(caret, ">");
+                this.view.textArea.insertText(caret, "<>");
             } else {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText().toUpperCase());
             }
@@ -57,11 +57,22 @@ public class ClavierControler implements EventHandler {
                     this.view.maj.setStyle(colorMajPressed);
                 }
             } else if (event.getSource().equals(this.view.guillemet)) {
-                this.view.textArea.insertText(caret, "\"\"");
+                this.view.textArea.insertText(caret, "\'\'\'\'");
+                this.view.textArea.positionCaret(caret+2);
             } else if (event.getSource().equals(this.view.esc)) {
                 // useless
             } else if (event.getSource().equals(this.view.chevrons)) {
-                this.view.textArea.insertText(caret, "<");
+                this.view.textArea.insertText(caret, "<>");
+                this.view.textArea.positionCaret(caret+1);
+            }else if (event.getSource().equals(this.view.parentheses)) {
+                this.view.textArea.insertText(caret, "()");
+                this.view.textArea.positionCaret(caret+1);
+            }else if (event.getSource().equals(this.view.crochets)) {
+                this.view.textArea.insertText(caret, "[]");
+                this.view.textArea.positionCaret(caret+1);
+            }else if (event.getSource().equals(this.view.accolades)) {
+                this.view.textArea.insertText(caret, "{}");
+                this.view.textArea.positionCaret(caret+1);
             } else if (event.getSource().equals(this.view.tab)) {
                 this.view.textArea.insertText(caret, "    ");
             } else if (event.getSource().equals(this.view.flecheG)) {//l'event arrivé esr : de se déplacer à gauche

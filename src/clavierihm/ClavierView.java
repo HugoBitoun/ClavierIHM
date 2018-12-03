@@ -22,8 +22,12 @@ import javafx.stage.Stage;
 public class ClavierView {
 
     Touche trois, quatre, cinq, six, sept, huit, neuf, deux, un,
-            zero, slash, aSlash, chevrons, pointExclam, pointVirgule, add, mult, soustr, egal, etLogique, pipe, tab, esc, accolades, crochets, pourcentage, guillemet, ctrl, suppr, espace, entrer, maj, a, z, e, r, t, y, u, i, o, flecheG, flecheD, flecheH, flecheB,
-            p, q, s, d, f, g, h, j, k, l, m, w, x, c, v, b, n, parentheses,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12;
+            zero, slash, aSlash, chevrons, pointExclam, pointVirgule, 
+            add, mult, soustr, egal, etLogique, pipe, tab, esc, accolades, 
+            crochets, pourcentage, guillemet, ctrl, suppr, espace, entrer,
+            maj, a, z, e, r, t, y, u, i, o, flecheG, flecheD, flecheH, flecheB,
+            p, q, s, d, f, g, h, j, k, l, m, w, x, c, v, b, n, parentheses,
+            f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12, dollar;
 
     TextArea textArea;
     ArrayList<Touche> touches = new ArrayList();
@@ -77,7 +81,7 @@ public class ClavierView {
                 
         //LIGNE 1
         touches.add(esc = new Touche("Esc", 0, 1, false));
-        touches.add(guillemet = new Touche("\"\"", 1, 1, true));
+        touches.add(guillemet = new Touche("\"\" \'\'", 1, 1, true));
         touches.add(pourcentage = new Touche("%", 2, 1, false));
         touches.add(pointExclam = new Touche("!", 3, 1, false));
         touches.add(un = new Touche("1", 4, 1, false));
@@ -132,8 +136,9 @@ public class ClavierView {
         touches.add(g = new Touche("b", 8, 4, true));
         touches.add(h = new Touche("n", 9, 4, true));
 
-        touches.add(maj = new Touche("Maj", 10, 4, 4, 1, true));
+        touches.add(maj = new Touche("Maj", 10, 4, 4, 1, false));
         touches.add(flecheH = new Touche("↑", 14, 4, false));
+        touches.add(dollar = new Touche("$",15,4,false)); 
                      
         //LIGNE 5
         touches.add(mult = new Touche("*", 0, 5, false));

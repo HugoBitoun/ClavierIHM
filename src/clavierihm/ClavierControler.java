@@ -36,7 +36,8 @@ public class ClavierControler implements EventHandler {
 
         if (this.view.maj.getStyle().equals(colorMajPressed) && ((Touche) event.getSource()).isMajOk()) {
             if (event.getSource().equals(this.view.guillemet)) {
-                this.view.textArea.insertText(caret, "\"\"");
+                this.view.textArea.insertText(caret, "\'\'");
+                this.view.textArea.positionCaret(this.view.textArea.getCaretPosition() -1);  
             } else if (event.getSource().equals(this.view.chevrons)) {
                 this.view.textArea.insertText(caret, "<>");
             } else {
@@ -59,7 +60,16 @@ public class ClavierControler implements EventHandler {
             } else if (event.getSource().equals(this.view.guillemet)) {
                 this.view.textArea.insertText(caret, "\"\"");
                 this.view.textArea.positionCaret(caret+1);
-            } else if (event.getSource().equals(this.view.esc)) {
+            }  else if (event.getSource().equals(this.view.parentheses)) {
+                this.view.textArea.insertText(caret, "()");
+                this.view.textArea.positionCaret(this.view.textArea.getCaretPosition() -1);           
+            } else if (event.getSource().equals(this.view.crochets)) {
+                this.view.textArea.insertText(caret, "[]");
+                this.view.textArea.positionCaret(this.view.textArea.getCaretPosition() -1);           
+            } else if (event.getSource().equals(this.view.accolades)) {
+                this.view.textArea.insertText(caret, "{}");
+                this.view.textArea.positionCaret(this.view.textArea.getCaretPosition() -1);           
+            }else if (event.getSource().equals(this.view.esc)) {
                 // useless
             } else if (event.getSource().equals(this.view.chevrons)) {
                 this.view.textArea.insertText(caret, "<>");

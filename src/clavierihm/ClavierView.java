@@ -23,7 +23,7 @@ public class ClavierView {
 
     Touche trois, quatre, cinq, six, sept, huit, neuf, deux, un,
             zero, slash, aSlash, chevrons, pointExclam, pointVirgule, add, mult, soustr, egal, etLogique, pipe, tab, esc, accolades, crochets, pourcentage, guillemet, ctrl, suppr, espace, entrer, maj, a, z, e, r, t, y, u, i, o, flecheG, flecheD, flecheH, flecheB,
-            p, q, s, d, f, g, h, j, k, l, m, w, x, c, v, b, n, parentheses;
+            p, q, s, d, f, g, h, j, k, l, m, w, x, c, v, b, n, parentheses,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12;
 
     TextArea textArea;
     ArrayList<Touche> touches = new ArrayList();
@@ -59,7 +59,21 @@ public class ClavierView {
         touches.add(ctrl = new Touche("Ctrl", 0, 0, false));
         touches.add(chevrons = new Touche("<>", 1, 0, true));
         touches.add(slash = new Touche("/", 2, 0, false));
-        touches.add(aSlash = new Touche("\\", 3, 0, false));   
+        touches.add(aSlash = new Touche("\\", 3, 0, false));
+        touches.add(f1 = new Touche("f1", 4, 0, false));
+        touches.add(f2 = new Touche("f2", 5, 0, false));
+        touches.add(f3 = new Touche("f3", 6, 0, false));
+        touches.add(f4 = new Touche("f4", 7, 0, false));
+        touches.add(f5 = new Touche("f5", 8, 0, false));
+        touches.add(f6 = new Touche("f6", 9, 0, false));
+        touches.add(f7 = new Touche("f6", 10, 0, false));
+        touches.add(f8 = new Touche("f7", 11, 0, false));
+        touches.add(f9 = new Touche("f9", 12, 0, false));
+        touches.add(f10 = new Touche("f10", 13, 0, false));
+        touches.add(f11 = new Touche("f11", 14, 0, false));
+        touches.add(f12 = new Touche("f12", 15, 0, false));
+        
+        
                 
         //LIGNE 1
         touches.add(esc = new Touche("Esc", 0, 1, false));

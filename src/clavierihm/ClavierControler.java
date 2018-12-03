@@ -97,6 +97,8 @@ public class ClavierControler implements EventHandler {
 //                    lastLine = this.view.textArea.getCaretPosition();
 //                    this.view.textArea.positionCaret(nextLine);
 //                }
+            } else if (event.getSource().equals(this.view.suppr2)){
+                this.view.textArea.deleteNextChar();
             } else {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText());
             }

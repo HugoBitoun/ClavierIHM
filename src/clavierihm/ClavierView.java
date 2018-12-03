@@ -27,7 +27,7 @@ public class ClavierView {
             crochets, pourcentage, guillemet, ctrl, suppr, espace, entrer,
             maj, a, z, e, r, t, y, u, i, o, flecheG, flecheD, flecheH, flecheB,
             p, q, s, d, f, g, h, j, k, l, m, w, x, c, v, b, n, parentheses,
-            f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12, dollar, suppr2,fin,debut;
+            f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12, dollar, suppr2,fin,debut,point,diese;
 
     TextArea textArea;
     ArrayList<Touche> touches = new ArrayList();
@@ -95,6 +95,7 @@ public class ClavierView {
         touches.add(neuf = new Touche("9", 12, 1, false,true));
         touches.add(zero = new Touche("0", 13, 1, false,true));
         touches.add(suppr2 = new Touche("suppr",14,1,2,1,false,true)); 
+        
             
         //LIGNE 2
         touches.add(suppr = new Touche("Delete", 0, 2, 2, 1, false,true));
@@ -110,8 +111,10 @@ public class ClavierView {
         touches.add(i = new Touche("i", 11, 2, true,true));
         touches.add(o = new Touche("o", 12, 2, true,true));
         touches.add(p = new Touche("p", 13, 2, true,true));
-        touches.add(fin = new Touche("fin",14,1,false,true));
-        touches.add(debut = new Touche("deb",15,1,false,true));
+        touches.add(fin = new Touche("fin",14,2,false,true));
+        touches.add(debut = new Touche("deb",15,2,false,true));
+       
+    
         
 
         //LIGNE 3
@@ -128,21 +131,24 @@ public class ClavierView {
         touches.add(k = new Touche("k", 11, 3, true,true));
         touches.add(l = new Touche("l", 12, 3, true,true));
         touches.add(m = new Touche("m", 13, 3, true,true));
+        touches.add(diese = new Touche("#",14,3,false,true)); 
+        touches.add(pipe = new Touche("| &", 15, 3, false,true));
         
         //LIGNE 4
         touches.add(tab = new Touche("Tab", 0, 4, 2, 1, false,true));
         touches.add(deuxPoint = new Touche(":", 2, 4, false,true));
-        touches.add(pipe = new Touche("| &", 3, 4, true,true));
+         touches.add(point = new Touche(".",3,4,false,true));
         touches.add(q = new Touche("w", 4, 4, true,true));
         touches.add(s = new Touche("x", 5, 4, true,true));
         touches.add(d = new Touche("c", 6, 4, true,true));
         touches.add(f = new Touche("v", 7, 4, true,true));
         touches.add(g = new Touche("b", 8, 4, true,true));
         touches.add(h = new Touche("n", 9, 4, true,true));
-
+        touches.add(debut = new Touche("deb",15,2,false,true));
         touches.add(maj = new Touche("Maj", 10, 4, 4, 1, false,true));
         touches.add(flecheH = new Touche("↑", 14, 4, false,true));
         touches.add(dollar = new Touche("$ €",15,4,true,true));
+   
         
                      
         //LIGNE 5

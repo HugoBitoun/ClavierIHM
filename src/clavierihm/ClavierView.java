@@ -132,7 +132,7 @@ public class ClavierView {
         touches.add(l = new Touche("l", 12, 3, true,true));
         touches.add(m = new Touche("m", 13, 3, true,true));
         touches.add(diese = new Touche("#",14,3,false,true)); 
-        touches.add(pipe = new Touche("| &", 15, 3, false,true));
+        touches.add(pipe = new Touche("| &", 15, 3, true,true));
         
         //LIGNE 4
         touches.add(tab = new Touche("Tab", 0, 4, 2, 1, false,true));

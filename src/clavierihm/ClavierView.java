@@ -23,7 +23,7 @@ public class ClavierView {
 
     Touche trois, quatre, cinq, six, sept, huit, neuf, deux, un,
             zero, slash, aSlash, chevrons, pointExclam, pointVirgule, 
-            add, mult, soustr, egal, etLogique, pipe, tab, esc, accolades, 
+            add, mult, soustr, egal, deuxPoint, pipe, tab, esc, accolades, 
             crochets, pourcentage, guillemet, ctrl, suppr, espace, entrer,
             maj, a, z, e, r, t, y, u, i, o, flecheG, flecheD, flecheH, flecheB,
             p, q, s, d, f, g, h, j, k, l, m, w, x, c, v, b, n, parentheses,
@@ -83,7 +83,7 @@ public class ClavierView {
         touches.add(esc = new Touche("Esc", 0, 1, false,false));
         touches.add(guillemet = new Touche("\"\" \'\'", 1, 1, true,true));
         touches.add(pourcentage = new Touche("%", 2, 1, false,true));
-        touches.add(pointExclam = new Touche("!", 3, 1, false,true));
+        touches.add(pointExclam = new Touche("! ?", 3, 1, true,true));
         touches.add(un = new Touche("1", 4, 1, false,true));
         touches.add(deux = new Touche("2", 5, 1, false,true));
         touches.add(trois = new Touche("3", 6, 1, false,true));
@@ -111,7 +111,7 @@ public class ClavierView {
         touches.add(o = new Touche("o", 12, 2, true,true));
         touches.add(p = new Touche("p", 13, 2, true,true));
         touches.add(fin = new Touche("fin",14,1,false,true));
-        touches.add(debut = new Touche("debut",15,1,false,true));
+        touches.add(debut = new Touche("deb",15,1,false,true));
         
 
         //LIGNE 3
@@ -131,8 +131,8 @@ public class ClavierView {
         
         //LIGNE 4
         touches.add(tab = new Touche("Tab", 0, 4, 2, 1, false,true));
-        touches.add(etLogique = new Touche("&", 2, 4, false,true));
-        touches.add(pipe = new Touche("|", 3, 4, false,true));
+        touches.add(deuxPoint = new Touche(":", 2, 4, false,true));
+        touches.add(pipe = new Touche("| &", 3, 4, true,true));
         touches.add(q = new Touche("w", 4, 4, true,true));
         touches.add(s = new Touche("x", 5, 4, true,true));
         touches.add(d = new Touche("c", 6, 4, true,true));
@@ -174,7 +174,7 @@ public class ClavierView {
      * Fonction qui récupère les évenements 
      */
     public void getEvent() {
-        ClavierControler controler = new ClavierControler(this, new ClavierModel());
+        ClavierControler controler = new ClavierControler(this);
         for (Touche touche : this.touches) {
             touche.addEventHandler(MouseEvent.MOUSE_CLICKED, controler);
         }

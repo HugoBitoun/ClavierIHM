@@ -14,24 +14,30 @@ import javafx.scene.control.Button;
 public class Touche extends Button {
     
     private int col, row, colspan, rowspan;  
-    private boolean majOk;
+    private boolean majOk, usefull;
 
-    Touche(String text, int col, int row, int colspan, int rowspan, boolean majOk) {
+    Touche(String text, int col, int row, int colspan, int rowspan, boolean majOk, boolean usefull) {
         super(text);
         this.col = col;
         this.row = row;
         this.colspan = colspan; 
         this.rowspan = rowspan; 
         this.majOk = majOk;
+        this.usefull = usefull; 
+    }
+
+    public boolean isUsefull() {
+        return usefull;
     }
     
-    Touche(String text, int col, int row, boolean majOk) {
+    Touche(String text, int col, int row, boolean majOk, boolean usefull) {
         super(text);
         colspan = 1; 
         rowspan = 1; 
         this.col = col;
         this.row = row; 
         this.majOk = majOk; 
+        this.usefull = usefull;
         
     }
 

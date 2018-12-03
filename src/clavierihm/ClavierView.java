@@ -27,7 +27,7 @@ public class ClavierView {
             crochets, pourcentage, guillemet, ctrl, suppr, espace, entrer,
             maj, a, z, e, r, t, y, u, i, o, flecheG, flecheD, flecheH, flecheB,
             p, q, s, d, f, g, h, j, k, l, m, w, x, c, v, b, n, parentheses,
-            f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12, dollar, suppr2;
+            f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12, dollar, suppr2,fin,debut;
 
     TextArea textArea;
     ArrayList<Touche> touches = new ArrayList();
@@ -94,6 +94,7 @@ public class ClavierView {
         touches.add(huit = new Touche("8", 11, 1, false));
         touches.add(neuf = new Touche("9", 12, 1, false));
         touches.add(zero = new Touche("0", 13, 1, false));
+        touches.add(suppr2 = new Touche("suppr",14,1,2,1,false)); 
             
         //LIGNE 2
         touches.add(suppr = new Touche("Delete", 0, 2, 2, 1, false));
@@ -109,7 +110,9 @@ public class ClavierView {
         touches.add(i = new Touche("i", 11, 2, true));
         touches.add(o = new Touche("o", 12, 2, true));
         touches.add(p = new Touche("p", 13, 2, true));
-        touches.add(suppr2 = new Touche("suppr",14,1,2,1,false)); 
+        touches.add(fin = new Touche("fin",14,1,false));
+        touches.add(debut = new Touche("debut",15,1,false));
+        
 
         //LIGNE 3
         touches.add(entrer = new Touche("Entrée", 0, 3, 2, 1, false));

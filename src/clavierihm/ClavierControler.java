@@ -99,7 +99,11 @@ public class ClavierControler implements EventHandler {
 //                }
             } else if (event.getSource().equals(this.view.suppr2)){
                 this.view.textArea.deleteNextChar();
-            } else {
+            } else if (event.getSource().equals(this.view.debut)){
+                this.view.textArea.positionCaret(0);
+            } else if (event.getSource().equals(this.view.fin)){
+                this.view.textArea.positionCaret(Integer.MAX_VALUE);
+            }else {
                 this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText());
             }
             //System.out.println("caret Fin = "+this.view.textArea.getCaretPosition()+"\n");

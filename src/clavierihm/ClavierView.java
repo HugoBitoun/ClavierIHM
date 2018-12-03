@@ -142,7 +142,7 @@ public class ClavierView {
 
         touches.add(maj = new Touche("Maj", 10, 4, 4, 1, false,true));
         touches.add(flecheH = new Touche("↑", 14, 4, false,true));
-        touches.add(dollar = new Touche("$",15,4,false,true));
+        touches.add(dollar = new Touche("$ €",15,4,true,true));
         
                      
         //LIGNE 5

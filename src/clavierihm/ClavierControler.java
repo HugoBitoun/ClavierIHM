@@ -42,6 +42,8 @@ public class ClavierControler implements EventHandler {
                     this.view.textArea.positionCaret(this.view.textArea.getCaretPosition() - 1);
                 } else if (event.getSource().equals(this.view.chevrons)) {
                     this.view.textArea.insertText(caret, "<>");
+                } else if (event.getSource().equals(this.view.dollar)) {
+                    this.view.textArea.insertText(caret, "€");
                 } else {
                     this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText().toUpperCase());
                 }
@@ -105,6 +107,8 @@ public class ClavierControler implements EventHandler {
                     this.view.textArea.positionCaret(0);
                 } else if (event.getSource().equals(this.view.fin)) {
                     this.view.textArea.positionCaret(Integer.MAX_VALUE);
+                } else if (event.getSource().equals(this.view.dollar)) {
+                    this.view.textArea.insertText(caret, "$");
                 } else {
                     this.view.textArea.insertText(caret, ((Touche) event.getSource()).getText());
                 }

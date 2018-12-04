@@ -40,7 +40,7 @@ public class ClavierControler implements EventHandler {
                     this.view.textArea.insertText(caret, "\'\'");
                     this.view.textArea.positionCaret(this.view.textArea.getCaretPosition() - 1);
                 } else if (event.getSource().equals(this.view.chevrons)) {
-                    this.view.textArea.insertText(caret, "<>");
+                    this.view.textArea.insertText(caret, ">");
                 } else if (event.getSource().equals(this.view.dollar)) {
                     this.view.textArea.insertText(caret, "€");
                 } else if (event.getSource().equals(this.view.pointExclam)) {
@@ -79,8 +79,7 @@ public class ClavierControler implements EventHandler {
                 } else if (event.getSource().equals(this.view.esc)) {
                     // useless
                 } else if (event.getSource().equals(this.view.chevrons)) {
-                    this.view.textArea.insertText(caret, "<>");
-                    this.view.textArea.positionCaret(caret + 1);
+                    this.view.textArea.insertText(caret, "<");
                 } else if (event.getSource().equals(this.view.parentheses)) {
                     this.view.textArea.insertText(caret, "()");
                     this.view.textArea.positionCaret(caret + 1);
